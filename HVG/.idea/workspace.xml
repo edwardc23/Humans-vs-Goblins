@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25496a68-958e-4a0b-9549-7d10f3c53fba" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YwRMAtD0RVqMOSQHxhv2qo5BZx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Edward Cochran\Documents\Files for Git\HVG\resources" />
+      <recent name="C:\Users\Edward Cochran\Documents\Files for Git\HVG" />
+      <recent name="C:\Users\Edward Cochran\Documents\Files for Git\HVG\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Edward Cochran\Documents\Files for Git\HVG" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HVG" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HVG" />
+      <module name="HVG" />
+      <option name="VM_PARAMETERS" value="-p javafx-sdk-14/lib --add-modules=javafx.swing,javafx.graphics,javafx.fxml,javafx.media,javafx.web --add-reads javafx.graphics=ALL-UNNAMED --add-opens javafx.controls/com.sun.javafx.charts=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.css=ALL-UNNAMED --add-opens javafx.base/com.sun.javafx.runtime=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HVG" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25496a68-958e-4a0b-9549-7d10f3c53fba" name="Default Changelist" comment="" />
+      <created>1583851619754</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583851619754</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="392" y="5" width="825" height="682" key="#Project_Structure" timestamp="1583851671956">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="392" y="5" width="825" height="682" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1583851671956" />
+    <state x="190" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583862446470">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="190" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1583862446470" />
+    <state x="798" y="190" key="FileChooserDialogImpl" timestamp="1583852088540">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="798" y="190" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1583852088540" />
+    <state width="723" height="277" key="GridCell.Tab.0.bottom" timestamp="1583863104896">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="277" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1583863104896" />
+    <state width="723" height="277" key="GridCell.Tab.0.center" timestamp="1583863104895">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="277" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1583863104895" />
+    <state width="723" height="277" key="GridCell.Tab.0.left" timestamp="1583863104895">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="277" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1583863104895" />
+    <state width="723" height="277" key="GridCell.Tab.0.right" timestamp="1583863104896">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="277" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1583863104896" />
+    <state width="723" height="277" key="GridCell.Tab.1.bottom" timestamp="1583863104896">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1583863104896" />
+    <state width="723" height="277" key="GridCell.Tab.1.center" timestamp="1583863104896">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1583863104896" />
+    <state width="723" height="277" key="GridCell.Tab.1.left" timestamp="1583863104896">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1583863104896" />
+    <state width="723" height="277" key="GridCell.Tab.1.right" timestamp="1583863104896">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1583863104896" />
+    <state x="498" y="10" key="SettingsEditor" timestamp="1583862130912">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="498" y="10" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1583862130912" />
+  </component>
+</project>
