@@ -56,7 +56,7 @@ static Scanner in = new Scanner(System.in);
                 inCombat=false;
             }
         }
-        
+
     }
 
 
