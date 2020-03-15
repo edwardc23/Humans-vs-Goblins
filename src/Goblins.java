@@ -1,27 +1,94 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Goblins extends Ob{
     String enemy1;
     int[] place= getPlace();
-
+    String[] items= {"Sword","Shield","Armor of God","AR-15","Captain America Shield"
+            ,"Axe","Bow and Arrow","Brass Knuckles"};
+    Random rand =new Random();
+    String itemEQ;
     static String[] direction={"n","s","e","w"};
     public Goblins(String enemy)
     {place[0]=4;
     place[1]=4;
+
         enemy1=enemy;
         currentHealth=75;
         power=1;
+         itemEQ=itemAdd(items);
         attacks.add(0,"Slap");
         attacks.add(1,"Bite");
         attacks.add(2,"Ambush");
 
 
     }
+    public String itemAdd(String[] i)
+    {
+        //String[] items= {"Sword","Shield","Armor of God","AR-15","Captain America Shield"
+        //            ,"Axe","Bow and Arrow","Brass Knuckles"};
+        int num = rand.nextInt(16);
+        String item="";
+        switch(num){
+            case 0:
+                item= items[num];
+                break;
+            case 1:
+                item= items[num];
+                break;
+            case 2:
+                item=items[num];
+                break;
+            case 3:
+                item=items[num];
+                break;
+            case 4:
+                item= items[num];
+                break;
+            case 5:
+                item= items[num];
+                break;
+            case 6:
+                item=items[num];
+                break;
+            case 7:
+                item=items[num];
+                break;
+            case 8:
+                item= "";
+                break;
+            case 9:
+                item="";
+                break;
+            case 10:
+                item="";
+                break;
+            case 11:
+                item="";
+                break;
+            case 12:
+                item= "";
+                break;
+            case 13:
+                item= "";
+                break;
+            case 14:
+                item="";
+                break;
+            case 15:
+                item="";
+                break;
+
+
+        }
+
+        return item;
+    }
 
 
 
     public void combat(Humans h) {
-        int p=super.combat(h);
+        int p=super.combat(h,"Goblin");
         int damage;
         String a;
         switch (p) {

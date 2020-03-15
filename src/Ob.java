@@ -24,9 +24,29 @@ public class Ob {
     public int getPower() {
         return power;
     }
-    public int  combat(Object h) {
+    public int  combat(Object h,String x) {
+        int attack=0;
+        if(x.equals("Goblin"))
+        {
+            attack = rand.nextInt(3);
+        }
+         else if(x.equals("Human"))
+        {
+            System.out.println("What would you like to do? (Pick a number)");
+            System.out.println(String.format("""
+                    1. Punch
+                    2. Stab
+                    3. Shoot
+                    """));
+            int y=in.nextInt();
+            while(y!=1&&y!=2&&y!=3)
+            {
+                System.out.println("Try again");
+                y=in.nextInt();
+            }
+            attack=y-1;
+        }
 
-         int attack = rand.nextInt(3);
      
 return attack;
     }
