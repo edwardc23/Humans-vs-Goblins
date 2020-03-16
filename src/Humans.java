@@ -114,7 +114,7 @@ public class Humans extends Ob{
                 }
                 break;
             case("s"):
-                if(x!=4)
+                if(x!=6)
                 {
                     a.table[x + 1][y] = toString(pawn);
                     place[0]=x+1;
@@ -127,7 +127,7 @@ public class Humans extends Ob{
                 }
                 break;
             case("e"):
-                if(y<4)
+                if(y<6)
                 {
                     a.table[x][y+1] = toString(pawn);
                     place[0]=x;

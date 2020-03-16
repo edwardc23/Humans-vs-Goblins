@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Land  {
-    String [][] table=new String [5][5];
+    String [][] table=new String [7][7];
     int num=0;
     ArrayList fill= new ArrayList();
 
@@ -9,10 +9,10 @@ public class Land  {
     {
 
         if(num==0){
-            for(int x= 0; x<5;x++)
+            for(int x= 0; x<7;x++)
             {
 
-                for(int y=0;y<5;y++)
+                for(int y=0;y<7;y++)
                 {
                     if(x==0&&y==0)
                     {
@@ -21,12 +21,12 @@ public class Land  {
                         player1.place[0]=0;
                         player1.place[1]=0;
                     }
-                    else if(x==4&&y==4)
+                    else if(x==6&&y==6)
                     {
                         table[x][y]=enemy.enemy1+"|";
-                        System.out.print(table[4][4]);
-                        enemy.place[0]=4;
-                        enemy.place[1]=4;
+                        System.out.print(table[6][6]);
+                        enemy.place[0]=6;
+                        enemy.place[1]=6;
                     }
                     else{
                         table[x][y]=String.valueOf(x)+String.valueOf(y)+"|";
@@ -39,10 +39,10 @@ public class Land  {
         }
         else
         {
-            for(int x= 0; x<5;x++)
+            for(int x= 0; x<7;x++)
             {
 
-                for(int y=0;y<5;y++)
+                for(int y=0;y<7;y++)
                 {
 
                     if(player1.place[0]==x&&player1.place[1]==y)
@@ -51,7 +51,7 @@ public class Land  {
                     }
                     else if(enemy.place[0]==x&&enemy.place[1]==y)
                     {
-                        table[x][y] = " "+enemy.enemy1+"|";
+                        table[x][y] = ""+enemy.enemy1+"|";
                     }
                     else
                     {
@@ -67,10 +67,10 @@ public class Land  {
         return table;}
     public void printGrid(String[][] table1,Humans p,Goblins g) {
         this.table = table1;
-        for (int x = 0; x < 5; x++) {
+        for (int x = 0; x < 7; x++) {
 
-            for (int y = 0; y < 5; y++) {
-                System.out.print(table[x][y] + " ");
+            for (int y = 0; y < 7; y++) {
+                System.out.print(table[x][y] + "");
             }
             System.out.println("");
         }
@@ -129,10 +129,10 @@ public class Land  {
     }
     public String Combat (Humans h, Goblins g, int turns)
     {
-        if((h.place[0]+1==g.place[0]&&h.place[1]+1==g.place[1])||
-                (h.place[0]-1==g.place[0]&&h.place[1]-1==g.place[1])||
-                (h.place[0]+1==g.place[0]&&h.place[1]+1==g.place[1])||
-                (h.place[0]-1==g.place[0]&&h.place[1]-1==g.place[1])
+        if((h.place[0]+1==g.place[0]&&h.place[1]==g.place[1])||
+                (h.place[0]-1==g.place[0]&&h.place[1]==g.place[1])||
+                (h.place[0]==g.place[0]&&h.place[1]+1==g.place[1])||
+                (h.place[0]==g.place[0]&&h.place[1]-1==g.place[1])
         )
         {
             if (turns%2==0) {

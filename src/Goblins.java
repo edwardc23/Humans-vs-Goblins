@@ -10,8 +10,8 @@ public class Goblins extends Ob{
     String itemEQ;
     static String[] direction={"n","s","e","w"};
     public Goblins(String enemy)
-    {place[0]=4;
-    place[1]=4;
+    {place[0]=6;
+    place[1]=6;
 
         enemy1=enemy;
         currentHealth=75;
@@ -142,7 +142,7 @@ public class Goblins extends Ob{
                 }
                 break;
             case("s"):
-                if(x!=4)
+                if(x!=6)
                 {
                     a.table[x + 1][y] = toString(enemy1);
                     place[0]=x+1;
@@ -155,7 +155,7 @@ public class Goblins extends Ob{
                 }
                 break;
             case("e"):
-                if(y<4)
+                if(y<6)
                 {
                     a.table[x][y+1] = toString(enemy1);
                     place[0]=x;
