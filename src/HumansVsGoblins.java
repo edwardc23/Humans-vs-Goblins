@@ -23,11 +23,19 @@ static Scanner in = new Scanner(System.in);
             Goblins g=new Goblins("\uD83D\uDC7A");
             gobs.add(g);
         }
-        grid.createGrid(player1,enemy);
+        grid.table=grid.createGrid(player1,enemy);
+
         Random rand = new Random();
         turns=0;
         while(inGame){
             playGame();
+            if(player1.isInfected)
+            {
+                if(player1.currentHealth<=0)
+                {
+                    inGame=false;
+                }
+            }
 
         }}
         public static void playGame()
@@ -36,19 +44,24 @@ static Scanner in = new Scanner(System.in);
             while(inGame) {
                 while (!inCombat) {
                     if (turns % 2 == 0) {
+                        grid.printGrid(grid.createGrid(player1,enemy),player1,enemy);
+                        System.out.println("What direction do you want to go in?");
                         grid.table = player1.move(in.next(), player1.place[0], player1.place[1], in, grid, player1, enemy);
-                        grid.printGrid(grid.table,player1,enemy);
+
                         System.out.println("");
                     } else {
-                        int r = 3;
-                        grid.printGrid(enemy.move(direction[r], enemy.place[0], enemy.place[1], in, grid, player1, enemy),player1,enemy);
+
+                       enemy.move(enemy.place[0], enemy.place[1], in, grid, player1, enemy);
                     }
-                    String f=grid.Combat(player1, enemy, turns);
-                    if(f.equals("Not Over")){
-                        inCombat=true;}
+                   if((player1.place[0]+1==goblin.place[0]&&player1.place[1]==goblin.place[1])||
+                           (player1.place[0]-1==goblin.place[0]&&player1.place[1]==goblin.place[1])||
+                           (player1.place[0]==goblin.place[0]&&player1.place[1]+1==goblin.place[1])||
+                           (player1.place[0]==goblin.place[0]&&player1.place[1]-1==goblin.place[1])){
+                       fightMe();
+                   }
                     turns++;
                 }
-                fightMe();
+
             }
 
         }
@@ -56,23 +69,31 @@ static Scanner in = new Scanner(System.in);
         public static void fightMe()
         {
             String outcome="";
+            inCombat=true;
             while(inCombat){
             if(player1.currentHealth!=0||enemy.currentHealth!=0) {
                 outcome=grid.Combat(player1, enemy, turns);
                 turns++;
                 inCombat=true;
+                grid.printGrid(grid.table,player1,enemy);
                 if(outcome.equals("win")) {
                     System.out.println("You defeated the goblin!!");
                     player1.killCount++;
+
+
+
+                    //grid.printGrid(grid.table,player1,enemy);
+                    grid.lootPlace[0]=enemy.place[0];
+                    grid.lootPlace[1]=enemy.place[1];
                     enemy=gobs.get(player1.killCount);
-                    enemy.place[0]=4;
-                    enemy.place[1]=4;
+                    enemy.place[0]=6;
+                    enemy.place[1]=6;
+
                     if(player1.currentHealth<=75)
                     {
                     player1.currentHealth=player1.currentHealth+25;
                     }
-                    System.out.println("Goblin drop:"+enemy.itemEQ);
-                    player1.addItem(enemy.itemEQ);
+
                     if(player1.killCount%3==0)
                     {
                         player1.power=(player1.killCount/3)+1;
@@ -93,6 +114,7 @@ static Scanner in = new Scanner(System.in);
             {
                 inCombat=false;
             }
+
             }
 
 

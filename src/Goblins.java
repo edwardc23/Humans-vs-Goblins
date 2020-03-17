@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,13 +9,14 @@ public class Goblins extends Ob{
             ,"Axe","Bow and Arrow","Brass Knuckles"};
     Random rand =new Random();
     String itemEQ;
+    int inf=0;
     static String[] direction={"n","s","e","w"};
     public Goblins(String enemy)
     {place[0]=6;
     place[1]=6;
 
-        enemy1=enemy;
-        currentHealth=75;
+        enemy1 =  enemy;
+        currentHealth=50;
         power=1;
          itemEQ=itemAdd(items);
         attacks.add(0,"Slap");
@@ -28,61 +30,57 @@ public class Goblins extends Ob{
         //String[] items= {"Sword","Shield","Armor of God","AR-15","Captain America Shield"
         //            ,"Axe","Bow and Arrow","Brass Knuckles"};
         int num = rand.nextInt(16);
-        String item="";
-        switch(num){
-            case 0:
-                item= items[num];
-                break;
-            case 1:
-                item= items[num];
-                break;
-            case 2:
-                item=items[num];
-                break;
-            case 3:
-                item=items[num];
-                break;
-            case 4:
-                item= items[num];
-                break;
-            case 5:
-                item= items[num];
-                break;
-            case 6:
-                item=items[num];
-                break;
-            case 7:
-                item=items[num];
-                break;
-            case 8:
-                item= "";
-                break;
-            case 9:
-                item="";
-                break;
-            case 10:
-                item="";
-                break;
-            case 11:
-                item="";
-                break;
-            case 12:
-                item= "";
-                break;
-            case 13:
-                item= "";
-                break;
-            case 14:
-                item="";
-                break;
-            case 15:
-                item="";
-                break;
-
-
+        inf++;
+        String item = "";
+        if(inf%3==0)
+        {
+            item = "Coronavirus";
+            return item;
         }
+        else {
 
-        return item;
+            switch (num) {
+                case 0:
+                    item = items[num];
+
+                    break;
+                case 1:
+                    item = items[num];
+                    break;
+                case 2:
+                    item = items[num];
+                    break;
+                case 3:
+                    item = items[num];
+                    break;
+                case 4:
+                    item = items[num];
+                    break;
+                case 5:
+                    item = items[num];
+                    break;
+                case 6:
+                    item = items[num];
+                    break;
+                case 7:
+                    item = items[num];
+                    break;
+                case 8:
+                    item = "";
+                    break;
+                case 9:
+                    item = "";
+                    break;
+                case 10:
+                    item = "";
+                    break;
+
+
+
+            }
+
+            return item;
+        }
     }
 
 
@@ -123,10 +121,34 @@ public class Goblins extends Ob{
 
 
     }
-    public String[][] move(String movements, int x, int y, Scanner in,Land a,Humans player1, Goblins enemy)
+    public String[][] move( int x, int y, Scanner in,Land a,Humans player1, Goblins enemy)
     {
+        String movements="";
 
-        switch(movements.toLowerCase()) {
+        if(enemy.place[0]!=player1.place[0])
+        {
+            if(enemy.place[0]>player1.place[0])
+            {
+                movements="n";
+            }
+            else
+            {
+                movements="s";
+            }
+        }
+        else if(enemy.place[1]!=player1.place[1])
+        {
+            if(enemy.place[1]>player1.place[1])
+            {
+                movements="w";
+            }
+            else
+            {
+                movements="e";
+            }
+        }
+
+        switch(movements) {
             case ("n"):
                 if(x!=0)
                 {
@@ -135,11 +157,7 @@ public class Goblins extends Ob{
                     place[1]=y;
 
                 }
-                else
-                {
-                    movements=direction[rand.nextInt(4)];
-                    move(movements,x,y,in,a,player1,enemy);
-                }
+
                 break;
             case("s"):
                 if(x!=6)
@@ -148,11 +166,7 @@ public class Goblins extends Ob{
                     place[0]=x+1;
                     place[1]=y;
                 }
-                else
-                {
-                    movements=direction[rand.nextInt(4)];
-                    move(movements,x,y,in,a,player1,enemy);
-                }
+
                 break;
             case("e"):
                 if(y<6)
@@ -161,11 +175,7 @@ public class Goblins extends Ob{
                     place[0]=x;
                     place[1]=y+1;
                 }
-                else
-                {
-                    movements=direction[rand.nextInt(4)];
-                    move(movements,x,y,in,a,player1,enemy);
-                }
+
                 break;
             case("w"):
                 if(y>0)
@@ -174,13 +184,28 @@ public class Goblins extends Ob{
                     place[0]=x;
                     place[1]=y-1;
                 }
-                else
-                {
-                    movements=direction[rand.nextInt(4)];
-                    move(movements,x,y,in,a,player1,enemy);
-                }
+
                 break;
 
+        }
+        if(Arrays.equals(player1.place,enemy.place))
+        {
+            if(movements.equals("n"))
+            {
+                enemy.place[0]=enemy.place[0]+1;
+            }
+            else if(movements.equals("s"))
+            {
+                enemy.place[0]=enemy.place[0]-1;
+            }
+            else if(movements.equals("e"))
+            {
+                enemy.place[1]=enemy.place[1]+1;
+            }
+            else if(movements.equals("w"))
+            {
+                enemy.place[1]=enemy.place[1]-1;
+            }
         }
         a.table=a.createGrid(player1,enemy);
 

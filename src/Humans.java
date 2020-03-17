@@ -1,15 +1,18 @@
 import java.util.Scanner;
 
 public class Humans extends Ob{
-    String pawn;
+    String pawn1;
     int [] place= new int[2];
     String[] inventory= new String[6];
     int indexOfInventory=0;
     int killCount=0;
     int addOn=1;
+    boolean itemE=false;
+    boolean isInfected=false;
+    int inf=0;
     public Humans(String pawn)
     {
-        this.pawn=pawn;
+       pawn1=pawn;
         power=1;
         place[0]=0;
         place[1]=0;
@@ -20,23 +23,25 @@ public class Humans extends Ob{
     }
 
 
+
+
     public void combat(Goblins h) {
         int p=super.combat(h,"Human");
         int damage;
         String a;
         switch (p) {
             case 0:a=attacks.get(p);
-            damage=(power*rand.nextInt(50)+addOn);
+            damage=(power*rand.nextInt(25)+addOn);
                 h.currentHealth =h.currentHealth-damage;//attack strength
                 System.out.println("I attack using "+attacks.get(p)+" and dealt "+damage+" damage");
                 damage=0;
                 break;
-            case 1:damage=(power*rand.nextInt(55)+addOn);
+            case 1:damage=(power*(rand.nextInt(50)+15)+addOn);
                 h.currentHealth =h.currentHealth-damage;//attack strength
                 System.out.println("I attack using "+attacks.get(p)+" and dealt "+damage+" damage");
                 damage=0;
                 break;
-            case 2: damage=(power*rand.nextInt(60)+addOn);
+            case 2: damage=(power*(rand.nextInt(50)+35)+addOn);
                 h.currentHealth =h.currentHealth-damage;//attack strength
                 System.out.println("I attack using "+attacks.get(p)+" and dealt "+damage+" damage");
                 damage=0;
@@ -46,17 +51,16 @@ public class Humans extends Ob{
 
     public String toString(String move) {
         if(move.equals("n")||move.equals("e")||move.equals("s"))
-        {return pawn+"| ";}
+        {return pawn1 +"| ";}
         else
-        {return pawn+" |";}
+        {return pawn1 +" |";}
     }
     public void addItem(String item)
     {
         inventory[indexOfInventory]= item;
         indexOfInventory=indexOfInventory+1;
-        //String[] items= {"Sword","Shield","Armor of God","AR-15","Captain America Shield"
-        //            ,"Axe","Bow and Arrow","Brass Knuckles"};
-        int num = rand.nextInt(16);
+
+
 
         switch(item){
             case "Sword":
@@ -86,7 +90,9 @@ public class Humans extends Ob{
             case "Brass Knuckles":
                 addOn=7;
                 break;
-
+            case"Coronavirus":
+                boolean isInfected=true;
+                break;
 
         }
 
@@ -97,12 +103,19 @@ public class Humans extends Ob{
 
     public String[][] move(String movements, int x, int y, Scanner in,Land a,Humans player1, Goblins enemy)
     {
+        if(inf<=5&&isInfected)
+        {currentHealth=currentHealth-5;
 
+        }
+        else
+        {
+            isInfected=false;
+        }
         switch(movements.toLowerCase()) {
-            case ("n"):
+            case ("w"):
                 if(x!=0)
                 {
-                    a.table[x - 1][y] = toString(pawn);
+                    a.table[x - 1][y] = toString(pawn1);
                     place[0]=x-1;
                     place[1]=y;
 
@@ -116,7 +129,7 @@ public class Humans extends Ob{
             case("s"):
                 if(x!=6)
                 {
-                    a.table[x + 1][y] = toString(pawn);
+                    a.table[x + 1][y] = toString(pawn1);
                     place[0]=x+1;
                     place[1]=y;
                 }
@@ -126,10 +139,10 @@ public class Humans extends Ob{
                     move(movements,x,y,in,a,player1,enemy);
                 }
                 break;
-            case("e"):
+            case("d"):
                 if(y<6)
                 {
-                    a.table[x][y+1] = toString(pawn);
+                    a.table[x][y+1] = toString(pawn1);
                     place[0]=x;
                     place[1]=y+1;
                 }
@@ -139,10 +152,10 @@ public class Humans extends Ob{
                     move(movements,x,y,in,a,player1,enemy);
                 }
                 break;
-            case("w"):
+            case("a"):
                 if(y>0)
                 {
-                    a.table[x][y - 1] = toString(pawn);
+                    a.table[x][y - 1] = toString(pawn1);
                     place[0]=x;
                     place[1]=y-1;
                 }
