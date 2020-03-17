@@ -60,8 +60,10 @@ Scanner in = new Scanner(System.in);
                     } else if (lootPlace[0] == x && lootPlace[1] == y && player1.itemE) {
                         table[x][y] = loot + "";
 
-                    } else if (lootPlace[0] == player1.place[0] && lootPlace[1] == player1.place[1]) {
-                        player1.itemE = false;inventoryIndex++;
+                    } else if (lootPlace[0] == player1.place[0] && lootPlace[1] == player1.place[1]&&player1.itemE) {
+
+                        player1.itemE = false;
+                        inventoryIndex++;
                         if(!lootItem.equals("")){
                         System.out.println("Do you want this "+lootItem+"? Y or N");
                         if (in.next().toUpperCase().equals("Y")) {
@@ -115,7 +117,7 @@ Scanner in = new Scanner(System.in);
 
         return table;}
     public void printGrid(String[][] table1,Humans p,Goblins g) {
-        this.table = table1;
+        table = table1;
         for (int x = 0; x < 7; x++) {
 
             for (int y = 0; y < 7; y++) {
@@ -124,7 +126,7 @@ Scanner in = new Scanner(System.in);
             System.out.println("");
         }
         System.out.println("");
-        if (p.currentHealth == 100) {
+        if (p.currentHealth >= 100) {
             System.out.println("\033[4m"+String.format("""
             Inventory         Storage
             |%s |%s |%s |%s |%s |%s |\033[0m

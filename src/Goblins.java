@@ -42,7 +42,6 @@ public class Goblins extends Ob{
             switch (num) {
                 case 0:
                     item = items[num];
-
                     break;
                 case 1:
                     item = items[num];
@@ -66,10 +65,10 @@ public class Goblins extends Ob{
                     item = items[num];
                     break;
                 case 8:
-                    item = "";
+                    item = "PTN";
                     break;
                 case 9:
-                    item = "";
+                    item = "Full";
                     break;
                 case 10:
                     item = "";

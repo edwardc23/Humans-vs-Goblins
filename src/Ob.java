@@ -38,13 +38,21 @@ public class Ob {
                     2. Stab
                     3. Shoot
                     """));
-            int y=in.nextInt();
-            while(y!=1&&y!=2&&y!=3)
-            {
-                System.out.println("Try again");
+
+            int y =0;
+
+            do{
+                while(!in.hasNextInt()){
+                    String i=in.next();
+                    System.out.printf("\"%s\" is not a valid number.\n", i);
+                }
                 y=in.nextInt();
+            }while(y!=1&&y!=2&&y!=3);
+            {
+
+                attack = y - 1;
+
             }
-            attack=y-1;
         }
 
      

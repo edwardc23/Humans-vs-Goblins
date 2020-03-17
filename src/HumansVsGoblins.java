@@ -86,6 +86,7 @@ static Scanner in = new Scanner(System.in);
                     grid.lootPlace[0]=enemy.place[0];
                     grid.lootPlace[1]=enemy.place[1];
                     enemy=gobs.get(player1.killCount);
+                    gobs.remove(player1.killCount-1);
                     enemy.place[0]=6;
                     enemy.place[1]=6;
 
